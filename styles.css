@@ -1,15 +1,15 @@
-.glow {
-  /* Add a glowing effect to important buttons */
-  box-shadow: 0 0 16px 4px #f8be00, 0 0 32px 8px #fff20066;
-  animation: glowPulse 1.5s infinite alternate;
+/* Glowing effect for "Are You In?" button (yellow glow) */
+.glow-yellow {
+  box-shadow: 0 0 16px 4px #FFC907, 0 0 32px 8px #FFC90799;
+  animation: glowYellow 1.5s infinite alternate;
 }
 
-@keyframes glowPulse {
+@keyframes glowYellow {
   from {
-    box-shadow: 0 0 8px 2px #f8be00, 0 0 16px 4px #fff20033;
+    box-shadow: 0 0 8px 2px #FFC907, 0 0 16px 4px #FFC90733;
   }
   to {
-    box-shadow: 0 0 24px 8px #f8be00, 0 0 48px 16px #fff20099;
+    box-shadow: 0 0 24px 8px #FFC907, 0 0 48px 16px #FFC907;
   }
 }
 /* === Basic Reset and Header/Hero Styles for New Sections === */
@@ -261,8 +261,8 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
+  background-color: #fff; /* White background */
+  color: #005e70; /* Teal text, matches .btn-outline */
   padding: 14px 32px;
   text-decoration: none;
   border-radius: 6px;
@@ -277,13 +277,28 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #d0d6d2; /* White */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
 /* Add some spacing between sections */
 section {
   margin-bottom: 20px;
+}
+
+/* Glowing effect for important buttons (white glow) */
+.glow {
+  box-shadow: 0 0 16px 4px #fff, 0 0 32px 8px #fff;
+  animation: glowWhite 1.5s infinite alternate;
+}
+
+@keyframes glowWhite {
+  from {
+    box-shadow: 0 0 8px 2px #fff, 0 0 16px 4px #fff3;
+  }
+  to {
+    box-shadow: 0 0 24px 8px #fff, 0 0 48px 16px #fff;
+  }
 }
 
 /* 
