@@ -1,3 +1,47 @@
+/* Make the impact story section heading white for better contrast on the background */
+.impact-story h2 {
+  color: #fff;
+}
+/* Track Our Progress circle icon for the hero section */
+.progress-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  background: #FFC907; /* Jerry Can Yellow */
+  border-radius: 50%;
+  margin: 32px auto 0 auto;
+  /* Dim effect similar to the 'Are You In' button */
+  box-shadow: 0 0 16px 4px #FFC907, 0 0 32px 8px #FFC90799;
+  animation: glowYellow 1.5s infinite alternate;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.progress-circle:hover {
+  filter: brightness(0.85);
+  opacity: 0.85;
+}
+.progress-circle span {
+  color: #222;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.35em;
+  padding: 24px;
+  line-height: 1.3;
+}
+/* Add a background image to the Real-World Impact Story Section */
+.impact-bg {
+  /* Use the provided image as the background */
+  background-image: url('img/Chairty Water Page Second Half.jpg');
+  background-size: cover; /* Make the image cover the whole section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  position: relative;
+  /* Add a semi-transparent overlay for readability */
+}
+
+/* Removed the white overlay to make the background image fully visible */
 /* Glowing effect for "Are You In?" button (yellow glow) */
 .glow-yellow {
   box-shadow: 0 0 16px 4px #FFC907, 0 0 32px 8px #FFC90799;
@@ -184,30 +228,39 @@ body {
 section {
   background: #fff; /* White background for sections */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgbrgba(46, 157, 247, 0.45)a(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+  /* Soft blue shadow */
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  margin: 36px 0; /* More even vertical space between sections */
+  padding: 32px 16px; /* More even padding inside sections */
 }
 
 /* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('img/Chairty Water Hero Well.jpg');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  /* Make the background image stay fixed as the user scrolls */
-  background-attachment: fixed;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
 
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
+/* Make hero and impact story backgrounds continuous by using the same image and settings */
+.hero,
+.impact-bg {
+  position: relative;
+  background-image: url('img/Chairty Water Hero Well.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
   background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background-color: rgba(46, 157, 247, 0.45);
+}
+
+.hero {
+  padding: 60px 20px;
+  border-radius: 0 0 16px 16px;
+}
+
+.impact-bg {
+  padding: 40px 20px;
+  border-radius: 16px;
+  margin-top: -24px; /* Overlap slightly for a seamless look */
+  z-index: 1;
 }
 
 /* Make the headline bold and modern */
@@ -227,26 +280,42 @@ section {
 }
 
 /* Story Section Styles */
+
+/* Make the yellow banners thinner by reducing padding */
 .story {
   background-color: #FFC907; /* Jerry Can Yellow */
   color: #000; /* Black text for contrast */
   text-align: center;
-  padding: 30px 20px;
+  padding: 12px 10px; /* Slightly more padding for evenness */
+  margin-bottom: 36px; /* Match section margin for even spacing */
+  margin-top: 0;
+  border-radius: 12px;
 }
 
 /* Add accent color to section headings */
+/* Section headings are blue by default, but we will make specific ones black below */
 h2 {
   color: rgba(46, 157, 247, 0.45);
-    margin-top: 0;
+  margin-top: 0;
   font-weight: bold;
 }
 
+/* Make 'Our Story' and 'There is Still Time' headings black for better readability */
+.story h2,
+.call-to-action h2 {
+  color: #000;
+}
+
 /* Call-to-Action Section Styles */
+
+/* Make the yellow banners thinner by reducing padding */
 .call-to-action {
   background-color: #FFC907; /* Primary Yellow */
   color: #222;
   text-align: center;
-  padding: 30px 20px;
+  padding: 12px 10px; /* Match story section for evenness */
+  margin-bottom: 0;
+  border-radius: 12px;
 }
 
 /* Style the impact story image */
@@ -281,10 +350,7 @@ h2 {
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
-}
+/* Remove duplicate section margin, handled above for evenness */
 
 /* Glowing effect for important buttons (white glow) */
 .glow {
@@ -311,7 +377,7 @@ section {
 @media (max-width: 600px) {
   /* Make hero section padding smaller on small screens */
   .hero {
-    padding: 32px 8px;
+    padding: 24px 4px;
     font-size: 1em;
   }
 
@@ -325,11 +391,13 @@ section {
     font-size: 1em;
   }
 
-  /* Make story and call-to-action sections have less padding */
+  /* Make story and call-to-action sections have less padding, but keep even */
   .story,
   .call-to-action,
   .donation-section {
-    padding: 14px 8px;
+    padding: 12px 4px;
+    margin-bottom: 24px;
+    border-radius: 10px;
   }
 
   /* Make impact story image smaller and stack above the text */
@@ -340,7 +408,7 @@ section {
 
   .impact-image {
     width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+    max-width: 180px;
   }
 }
 
