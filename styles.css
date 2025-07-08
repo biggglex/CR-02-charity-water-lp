@@ -12,16 +12,18 @@
   background: #FFC907; /* Jerry Can Yellow */
   border-radius: 50%;
   margin: 32px auto 0 auto;
-  /* Dim effect similar to the 'Are You In' button */
+  /* Glowing effect */
   box-shadow: 0 0 16px 4px #FFC907, 0 0 32px 8px #FFC90799;
   animation: glowYellow 1.5s infinite alternate;
   transition: filter 0.3s, opacity 0.3s;
+  cursor: pointer; /* Show pointer on hover */
 }
 
 .progress-circle:hover {
   filter: brightness(0.85);
   opacity: 0.85;
 }
+
 .progress-circle span {
   color: #222;
   font-weight: bold;
@@ -228,10 +230,9 @@ body {
 section {
   background: #fff; /* White background for sections */
   border-radius: 12px; /* Rounded corners */
-  /* Soft blue shadow */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
-  margin: 36px 0; /* More even vertical space between sections */
-  padding: 32px 16px; /* More even padding inside sections */
+  box-shadow: 0 2px 8px rgbrgba(46, 157, 247, 0.45)a(46, 157, 247, 0.07); /* Soft blue shadow */
+  margin: 24px 10px; /* Space between sections */
+  padding: 24px 16px;
 }
 
 /* Hero Section Styles */
@@ -286,10 +287,7 @@ section {
   background-color: #FFC907; /* Jerry Can Yellow */
   color: #000; /* Black text for contrast */
   text-align: center;
-  padding: 12px 10px; /* Slightly more padding for evenness */
-  margin-bottom: 36px; /* Match section margin for even spacing */
-  margin-top: 0;
-  border-radius: 12px;
+  padding: 10px 10px; /* Thinner yellow banner */
 }
 
 /* Add accent color to section headings */
@@ -313,9 +311,7 @@ h2 {
   background-color: #FFC907; /* Primary Yellow */
   color: #222;
   text-align: center;
-  padding: 12px 10px; /* Match story section for evenness */
-  margin-bottom: 0;
-  border-radius: 12px;
+  padding: 10px 10px; /* Thinner yellow banner */
 }
 
 /* Style the impact story image */
@@ -350,7 +346,10 @@ h2 {
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
-/* Remove duplicate section margin, handled above for evenness */
+/* Add some spacing between sections */
+section {
+  margin-bottom: 20px;
+}
 
 /* Glowing effect for important buttons (white glow) */
 .glow {
@@ -377,7 +376,7 @@ h2 {
 @media (max-width: 600px) {
   /* Make hero section padding smaller on small screens */
   .hero {
-    padding: 24px 4px;
+    padding: 32px 8px;
     font-size: 1em;
   }
 
@@ -391,13 +390,11 @@ h2 {
     font-size: 1em;
   }
 
-  /* Make story and call-to-action sections have less padding, but keep even */
+  /* Make story and call-to-action sections have less padding */
   .story,
   .call-to-action,
   .donation-section {
-    padding: 12px 4px;
-    margin-bottom: 24px;
-    border-radius: 10px;
+    padding: 14px 8px;
   }
 
   /* Make impact story image smaller and stack above the text */
@@ -408,7 +405,7 @@ h2 {
 
   .impact-image {
     width: 90%;    /* Make image take up most of the width */
-    max-width: 180px;
+    max-width: 220px;
   }
 }
 
