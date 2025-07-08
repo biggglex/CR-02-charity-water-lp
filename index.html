@@ -21,13 +21,12 @@
             <h1>Track Every Drop.<br />Transform Every Life.</h1>
             <!-- Subheadline -->
             <p>
-                Help us continue to lead with transparency—every donation funds clean water projects
-                you can see, track, and measure in real time.
+                Help us continue to lead with transparency—every donation funds clean water projects you can see, track, and measure in real time.
             </p>
             <!-- Call-to-action buttons -->
             <div class="cta-buttons">
                 <a href="#" class="btn btn-outline">Learn How You Can Help Build The Next Drill</a>
-                <a href="#" class="btn btn-filled">Are You In?</a>
+                <a href="#" class="btn btn-filled glow">Are You In?</a>
             </div>
         </div>
         <div class="hero-image">
@@ -47,23 +46,40 @@
     <!-- Real-World Impact Story Section -->
     <section class="impact-story">
         <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
+        <h2>The Weight of Water: Meet Tarik</h2>
         <!-- Container for image and text -->
         <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
+            <!-- Impact video: Tarik's Walk for Water -->
+            <!-- Video will play when clicked (beginner-friendly JS below) -->
+            <video class="impact-image" width="320" controls id="tarikVideo">
+                <source src="img/tariks-walk-for-water.mp4" type="video/mp4">
+                Sorry, your browser does not support the video tag.
+            </video>
+            <script>
+            // Beginner-friendly: Play video when user clicks on it
+            document.addEventListener('DOMContentLoaded', function() {
+              var video = document.getElementById('tarikVideo');
+              video.addEventListener('click', function() {
+                if (video.paused) {
+                  video.play();
+                }
+              });
+            });
+            </script>
             <!-- Impact story text -->
             <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
+                Clean water changes everything — but only if we make it possible.
+
+Twelve-year-old Tarik Haftay walks to a river twice a day under the scorching 90-degree sun, carrying 40-pound jerry cans just to bring water home. It’s an hour-long round trip, and she does it all before heading to school — if there’s still time. Tarik’s story isn’t unique. Millions of girls around the world spend their childhoods walking for water instead of learning, playing, or dreaming. With your help, we can bring clean, safe water to communities like hers and give girls like Tarik the chance to thrive.
             </p>
         </div>
     </section>
 
     <!-- Call-to-Action Section: This encourages visitors to take action -->
     <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
+        <h2>There is Still Time</h2>
+        <p>Your support will not simply help provide clean water, but it will give more time to the lives of those who need it.</p>
+        <a href="#" class="donate-button glow">Give With Your Heart</a>
     </section>
 </body>
 </html>
